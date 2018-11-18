@@ -3,12 +3,16 @@
         <title>Test strony</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Powitanie</a></h1>
-        </div>
+      <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+      </div>
 
-        <div>
-            <p><strong>Cześć Makuś i Grzesiek. Robię test mojej strony. Działa?</strong></p>
-            <p>opublikowano: 17.11.2018, 17:05</p>
+{% for post in posts %}
+  <div>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+{% endfor %}
     </body>
 </html>
